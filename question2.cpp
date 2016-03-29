@@ -5,6 +5,7 @@
 // Date: 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 #include <iostream>
+#include "Time.h"
 
 using namespace std;
 
@@ -18,6 +19,15 @@ using namespace std;
 // 2.3  Overload the POSTFIX increment operator to increment the minutes (include carry if needed)
 
 
+
+ostream &operator<<(ostream &os, Time mytime)
+{
+	int hour, min;
+	mytime.get(hour, min);
+	os << hour << ":" << min << endl;
+	return os;
+}
+
 // ***** DO NOT MODIFY CODE BELOW THIS LINE *****
 int main(int argc, char *argv[]) {
 
@@ -27,8 +37,8 @@ int main(int argc, char *argv[]) {
 
 	myTime.set(10, 30);									// change the time
 
-	int hours, mins;									// get changed time
+	int hours=0, mins=0;									// get changed time
 	myTime.get(hours, mins);
-	cout << "Design 1 starts at " << mins << " past " << hours;   // display time in another format
+	cout << "Design 1 starts at " << mins << " past " << hours<<endl;   // display time in another format
 
 }
